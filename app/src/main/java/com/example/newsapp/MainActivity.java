@@ -4,8 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.res.Resources;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.JsonReader;
 
+import org.json.JSONObject;
+
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import data.NewsItem;
@@ -28,4 +34,18 @@ public class MainActivity extends AppCompatActivity {
     private void loadNews(){
         mNewsListAdapter.setNewsItems(new ArrayList<NewsItem>());
     }
+
+    class NewsTask extends AsyncTask<Void,Void,ArrayList<NewsItem>>{
+
+        @Override
+        protected ArrayList<NewsItem> doInBackground(Void... voids) {
+
+            return null;
+        }
+
+        private void loadJsonFromRes(){
+            InputStream inputStream = getResources().openRawResource(R.raw.news_sample);
+        }
+    }
+
 }
